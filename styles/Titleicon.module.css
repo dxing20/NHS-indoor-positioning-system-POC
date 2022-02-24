@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: left; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+
+
+.logo {
+    height: 3em;
+    display: inline;
+    align-items: center;
+}
+
+.navtitle {
+    display: inline;
+    align-items: center;
+    color: white;
+}
