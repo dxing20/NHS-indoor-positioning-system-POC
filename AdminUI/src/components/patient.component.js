@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
-import authService from "../services/auth.service";
 import patientService from "../services/patient.service";
 
 const PatientComponent = ({ jwt }) => {
@@ -44,7 +43,7 @@ const PatientComponent = ({ jwt }) => {
       .catch((error) => {
         alert(JSON.stringify(error.response.data, null, 2));
       });
-  }, []);
+  }, [jwt]);
 
   const handleInputs = (get, set) => {
     return (e) => {

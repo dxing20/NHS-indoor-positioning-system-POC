@@ -68,13 +68,7 @@ const LoggingComponent = ({ jwt, apiKey }) => {
       .catch((error) => {
         alert(JSON.stringify(error.response.data, null, 2));
       });
-  }, []);
-
-  const handleInputs = (get, set) => {
-    return (e) => {
-      return set(e.target.value);
-    };
-  };
+  }, [jwt]);
 
   const handleSelects = (arr, set) => {
     return (e) => {
