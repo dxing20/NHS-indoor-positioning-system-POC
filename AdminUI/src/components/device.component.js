@@ -30,7 +30,7 @@ const DeviceComponent = ({ jwt }) => {
       .catch((error) => {
         console.log(error.response.data);
       });
-  }, []);
+  }, [jwt]);
 
   const handleChangeName = (e) => {
     setName(e.target.value);
@@ -40,12 +40,12 @@ const DeviceComponent = ({ jwt }) => {
     setDeviceApiKey(e.target.value);
   };
 
-  const handleChangeAdd = () => {
-    setContext("Add");
+  const handleChangeAdd = (e) => {
+    if (e.target.checked) setContext("Add");
   };
 
-  const handleChangeDelete = () => {
-    setContext("Delete");
+  const handleChangeDelete = (e) => {
+    if (e.target.checked) setContext("Delete");
   };
 
   const handleSend = () => {
@@ -160,8 +160,8 @@ const DeviceComponent = ({ jwt }) => {
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
-                onChange={handleChangeAdd}
-                checked
+                onClick={handleChangeAdd}
+                checked={context === "Add"}
               />
               <label className="form-check-label" htmlFor="flexRadioDefault1">
                 Add
@@ -173,7 +173,8 @@ const DeviceComponent = ({ jwt }) => {
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault2"
-                onChange={handleChangeDelete}
+                onClick={handleChangeDelete}
+                checked={context === "Delete"}
               />
               <label className="form-check-label" htmlFor="flexRadioDefault2">
                 Delete

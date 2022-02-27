@@ -5,7 +5,7 @@ import locationService from "../services/location.service";
 const LocationComponent = ({ jwt }) => {
   let [roomName, setRoomName] = useState("");
   let [level, setLevel] = useState("");
-  let [context, setContext] = useState("Add");
+  let [context, setContext] = useState("");
   let [response, setResponse] = useState("No Requests Made");
   let [locations, setLocations] = useState([]);
   let [clearSelected, setClearSelected] = useState(false);
@@ -31,7 +31,7 @@ const LocationComponent = ({ jwt }) => {
       .catch((error) => {
         alert(JSON.stringify(error.response.data, null, 2));
       });
-  }, []);
+  }, [jwt]);
 
   const handleInputs = (get, set) => {
     return (e) => {
@@ -39,12 +39,16 @@ const LocationComponent = ({ jwt }) => {
     };
   };
 
-  const handleChangeAdd = () => {
-    setContext("Add");
+  const handleChangeAdd = (e) => {
+    if (e.target.checked) {
+      setContext("Add");
+    }
   };
 
-  const handleChangeDelete = () => {
-    setContext("Delete");
+  const handleChangeDelete = (e) => {
+    if (e.target.checked) {
+      setContext("Delete");
+    }
   };
 
   const handleSend = () => {
@@ -159,8 +163,8 @@ const LocationComponent = ({ jwt }) => {
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
-                onChange={handleChangeAdd}
-                checked
+                onClick={handleChangeAdd}
+                checked={context === "Add"}
               />
               <label className="form-check-label" htmlFor="flexRadioDefault1">
                 Add
@@ -172,7 +176,8 @@ const LocationComponent = ({ jwt }) => {
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault2"
-                onChange={handleChangeDelete}
+                onClick={handleChangeDelete}
+                checked={context === "Delete"}
               />
               <label className="form-check-label" htmlFor="flexRadioDefault2">
                 Delete

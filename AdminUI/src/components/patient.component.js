@@ -51,19 +51,19 @@ const PatientComponent = ({ jwt }) => {
     };
   };
 
-  const handleChangeAdd = () => {
-    setContext("Add");
+  const handleChangeAdd = (e) => {
+    if (e.target.checked) setContext("Add");
   };
 
-  const handleChangeDelete = () => {
-    setContext("Delete");
+  const handleChangeDelete = (e) => {
+    if (e.target.checked) setContext("Delete");
   };
 
   const handleSend = () => {
     setClearSelected(true);
     if (context === "Add") {
       patientService
-        .addPatient(id, firstname, lastname, jwt)
+        .registerPatient(id, firstname, lastname, jwt)
         .then((d) => {
           window.alert("Request Successful");
           setResponse(JSON.stringify(d.data, null, 2));
@@ -188,8 +188,8 @@ const PatientComponent = ({ jwt }) => {
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
-                onChange={handleChangeAdd}
-                checked
+                onClick={handleChangeAdd}
+                checked={context === "Add"}
               />
               <label className="form-check-label" htmlFor="flexRadioDefault1">
                 Add
@@ -201,7 +201,8 @@ const PatientComponent = ({ jwt }) => {
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault2"
-                onChange={handleChangeDelete}
+                onClick={handleChangeDelete}
+                checked={context === "Delete"}
               />
               <label className="form-check-label" htmlFor="flexRadioDefault2">
                 Delete
