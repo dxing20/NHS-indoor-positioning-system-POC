@@ -43,7 +43,11 @@ mongoose
     console.log(err);
   });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 // ----------------------------------------------------
 
 app.use("/api/auth", authRoute);
@@ -54,7 +58,9 @@ app.use("/api/data", authorize, userPrivilege, dataRoute);
 // ----------------------------------------------------
 
 app.get("/", (req, res) => {
-  res.send("<h1>Hello world</h1>");
+  res.json({
+    message: "API Alive, Connection Successful",
+  });
 });
 
 app.get("/*", (req, res) => {
