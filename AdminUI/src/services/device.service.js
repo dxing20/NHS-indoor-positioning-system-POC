@@ -1,8 +1,8 @@
 import axios from "axios";
-
-const API_DEVICE_ADD = "http://localhost:8080/api/admin/addDevice";
-const API_DEVICE_DELETE = "http://localhost:8080/api/admin/removeDevice";
-const API_DEVICE_GET = "http://localhost:8080/api/data/device";
+const base = "https://api-dot-nhsproject-342615.nw.r.appspot.com";
+const API_DEVICE_ADD = base.concat("/api/admin/addDevice");
+const API_DEVICE_DELETE = base.concat("/api/admin/removeDevice");
+const API_DEVICE_GET = base.concat("/api/data/device");
 
 class DeviceService {
   addDevice(name, apiKey, jwt) {

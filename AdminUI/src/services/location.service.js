@@ -1,8 +1,9 @@
 import axios from "axios";
 
-const API_LOCATION_ADD = "http://localhost:8080/api/admin/addLocation";
-const API_LOCATION_DELETE = "http://localhost:8080/api/admin/removeLocation";
-const API_LOCATION_GET = "http://localhost:8080/api/data/location";
+const base = "https://api-dot-nhsproject-342615.nw.r.appspot.com";
+const API_LOCATION_ADD = base.concat("/api/admin/addLocation");
+const API_LOCATION_DELETE = base.concat("/api/admin/removeLocation");
+const API_LOCATION_GET = base.concat("/api/data/location");
 
 class LocationService {
   addLocation(roomName, level, jwt) {

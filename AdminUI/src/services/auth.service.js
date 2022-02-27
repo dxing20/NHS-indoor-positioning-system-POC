@@ -1,10 +1,11 @@
 import axios from "axios";
 
-const JWT_URL = "http://localhost:8080/api/auth/login";
-const ADD_USER_URL = "http://localhost:8080/api/admin/register";
-const DELETE_USER_URL = "http://localhost:8080/api/admin/unregister";
-const GET_USER_URL = "http://localhost:8080/api/data/user";
-const GET_QR_CODE = "http://localhost:8080/api/admin/getQRCode?nhsid=";
+const base = "https://api-dot-nhsproject-342615.nw.r.appspot.com";
+const JWT_URL = base.concat("/api/auth/login");
+const ADD_USER_URL = base.concat("/api/admin/register");
+const DELETE_USER_URL = base.concat("/api/admin/unregister");
+const GET_USER_URL = base.concat("/api/data/user");
+const GET_QR_CODE = base.concat("/api/admin/getQRCode?nhsid=");
 
 class AuthService {
   getJwt(nhsid, password) {

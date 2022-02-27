@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const API_UPDATE = "http://localhost:8080/api/log/update";
-const API_LOGS = "http://localhost:8080/api/data/log/";
+const base = "https://api-dot-nhsproject-342615.nw.r.appspot.com";
+const API_UPDATE = base.concat("/api/log/update");
+const API_LOGS = base.concat("/api/data/log/");
 
 class LocationService {
   addLog(qrhash, roomName, level, date, apiKey) {

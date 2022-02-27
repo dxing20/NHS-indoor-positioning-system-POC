@@ -1,8 +1,8 @@
 import axios from "axios";
-
-const API_PATIENT_REGISTER = "http://localhost:8080/api/admin/registerPatient";
-const API_PATIENT_REMOVE = "http://localhost:8080/api/admin/unregister";
-const API_PATIENT_GET = "http://localhost:8080/api/data/patient";
+const base = "https://api-dot-nhsproject-342615.nw.r.appspot.com";
+const API_PATIENT_REGISTER = base.concat("/api/admin/registerPatient");
+const API_PATIENT_REMOVE = base.concat("/api/admin/unregister");
+const API_PATIENT_GET = base.concat("/api/data/patient");
 
 class PatientService {
   registerPatient(nhsid, firstname, lastname, jwt) {
