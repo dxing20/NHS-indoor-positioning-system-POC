@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import homeStyles from '../styles/Home.module.css'
 import { Row, Col } from "antd";
+import RoomHistoryDashboardDisplay from '../components/RoomHistoryDashboardDisplay';
+import PatientHistoryDashboardDisplay from '../components/PatientHistoryDashboardDisplay';
+import APIDashboardDisplay from '../components/APIDashboardDisplay';
 
 export default function Home() {
   return (
@@ -13,18 +16,18 @@ export default function Home() {
       <main className={homeStyles.main}>
         <Row gutter={[6,6]} align="middle" justify='center'>
           <Col span={8} className={homeStyles.grid}>
-            TEST BOX
+            <APIDashboardDisplay />
           </Col>
           <Col span={8} className={homeStyles.grid}>
-            TEST BOX
+            <RoomHistoryDashboardDisplay />
           </Col>
         </Row>
         <Row gutter={[6,6]} align="middle" justify='center'>
           <Col span={8} className={homeStyles.grid}>
-            TEST BOX
+            <APIDashboardDisplay />
           </Col>
           <Col span={8} className={homeStyles.grid}>
-            TEST BOX
+            <PatientHistoryDashboardDisplay />
           </Col>
         </Row>
       </main>

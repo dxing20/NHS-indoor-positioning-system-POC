@@ -6,23 +6,20 @@ const Navbar = () => {
   return (
     <nav className={navStyles.navbar}>
       <Row>
-        <Col span={6}><Titleicon className={navStyles.Titleicon}/></Col>
+        <Col span={6}>
+          <Titleicon
+            iconLink={<a href='/'><img src="/title.ico" alt="Navbar-icon" className={navStyles.Titleicon} /></a>}
+            titleLink={<a href='/' style={{ color: '#fff', fontSize: 20 }}>Patient Locator</a>}
+          />
+        </Col>
         <Col span={12}>
           <div>
-            <ul className={navStyles.navitems}>
-              <li className={navStyles.navitem}>
-                <a href="/">Dashboard</a>
-              </li>        
-              <li className={navStyles.navitem}>
-                <a href="roomHistory">Room History</a>
-              </li>        
-              <li className={navStyles.navitem}>
-                <a href="patientHistory">Patient History</a>
-              </li>        
-              <li className={navStyles.navitem}>
-                <a href="apis">APIs</a>
-              </li>
-            </ul>
+            <div className={navStyles.navitem}>
+              <a href="/">Dashboard</a>
+              <a href="roomHistory">Room History</a>
+              <a href="patientHistory">Patient History</a>
+              <div className={navStyles.indicator}></div>
+            </div>
           </div>
         </Col>
         <Col span={6}>
@@ -31,8 +28,8 @@ const Navbar = () => {
           </div>
         </Col>
       </Row>
-    </nav>        
+    </nav>
   );
 }
- 
+
 export default Navbar;

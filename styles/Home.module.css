@@ -1,6 +1,5 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,18 +9,33 @@
 
 .grid {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: top;
+  justify-content: left;
   flex-wrap: wrap;
 
   margin-top: 3rem;
   margin-left: 15px;
-  border: solid #000;
+  /* border: solid #000;
   border-width: 1px;
-  border-radius: 5px;
+  border-radius: 5px; */
   width: 800px;
-  height: 200px;
-  box-shadow: 0 0px 10px 2px #ddd;
+  height: 250px;
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.grid hr {
+  margin: 45px -280px 10px;
+  margin-left: 9px;
+  border: 0;  
+  border-top: 1px solid #000;
+}
+
+.boxTitle {
+  text-align: left;
+  /* vertical-align: top; */
+  justify-content: top;
 }
 
 .main {
@@ -31,6 +45,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.cardDesc {
+  display: flexbox;
+  margin-left: 45px;
+  height: 135px;
+}
+
+.cardFooter {
+  display: flex;
+  border-top: 1px solid rgba(0,0,0,.12);
+  width: 506px;
+  margin-top: 45px;
+}
+
+.APIcontainer {
+  padding-top: 20px;
+  padding-left: 10px;
 }
 
 
