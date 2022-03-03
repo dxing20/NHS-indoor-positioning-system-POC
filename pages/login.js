@@ -26,13 +26,6 @@ const Login = () => {
             Log in
           </button>
         </div>
-        <div>
-          <label className={loginStyles.misc}>
-            <input type="checkbox"></input>
-            Remember Me
-          </label>
-          <a className={loginStyles.forgotpassword} href="/forgotpassord">Forgot Password?</a>
-        </div>
       </form>
     </div>
   );
