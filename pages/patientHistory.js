@@ -1,9 +1,11 @@
+import PatientTable from "../components/PatientHistoryTable";
+
 const patientHistory = () => {
-  return ( 
+  return (
     <div>
-      INSERT PATIENT HISTORY
+      {PatientTable.render()}
     </div>
   );
 }
- 
+
 export default patientHistory;

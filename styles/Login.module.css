@@ -1,3 +1,8 @@
+.body {
+  display: flex;
+  vertical-align: middle;
+}
+
 .loginBox {
   width: 340px;
   margin: 50px auto;

@@ -1,33 +1,19 @@
-import loginStyles from "../styles/Login.module.css"
+import React, { useState } from "react";
+import Profile from "../components/Profile";
 
 const Login = () => {
+  let [username, setUsername] = useState("");
+  let [password, setPassword] = useState("");
+  let [apiToken, setApiToken] = useState("");
+  let [jwt, setJwt] = useState("");
+
   return (
-    <div className={loginStyles.loginBox}>
-      <form className={loginStyles.loginForm}>
-        <h2>Log in</h2>
-        <div className={loginStyles.formGroup}>
-          <input
-            className={loginStyles.formControl}
-            type="text"
-            placeholder="Username"
-            required
-          ></input>
-        </div>
-        <div className={loginStyles.formGroup}>
-          <input
-            className={loginStyles.formControl}
-            type="password"
-            placeholder="Password"
-            required
-          ></input>
-        </div>
-        <div className={loginStyles.formGroup}>
-          <button type="submit" className={loginStyles.button}>
-            Log in
-          </button>
-        </div>
-      </form>
-    </div>
+    <Profile
+      username={username}
+      setUsername={setUsername}
+      password={password}
+      setPassword={setPassword}
+    />
   );
 }
 
