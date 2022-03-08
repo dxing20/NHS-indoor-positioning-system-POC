@@ -1,9 +1,7 @@
-import navStyles from '../styles/Nav.module.css'
-import mainStyles from '../styles/Home.module.css'
-import Titleicon from "./Titleicon";
-import IconButton from './IconButton';
-import { ArrowRightOutlined } from "@ant-design/icons";
-import CardFooter from './CardFooter';
+import navStyles from '../../styles/Nav.module.css'
+import mainStyles from "../../styles/Home.module.css"
+import Titleicon from "../Titleicon";
+import CardFooter from './DashboardCardFooter';
 
 const RoomHistoryDashboardDisplay = () => {
   return (

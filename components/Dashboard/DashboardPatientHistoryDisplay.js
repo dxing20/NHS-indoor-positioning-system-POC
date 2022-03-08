@@ -1,7 +1,7 @@
-import CardFooter from "./CardFooter";
-import Titleicon from "./Titleicon";
-import mainStyles from "../styles/Home.module.css"
-import navStyles from "../styles/Nav.module.css"
+import CardFooter from "./DashboardCardFooter";
+import Titleicon from "../Titleicon";
+import mainStyles from "../../styles/Home.module.css"
+import navStyles from "../../styles/Nav.module.css"
 import { FontSizeOutlined } from "@ant-design/icons";
 
 const PatientHistoryDashboardDisplay = () => {

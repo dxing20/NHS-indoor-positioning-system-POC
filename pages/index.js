@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import homeStyles from '../styles/Home.module.css'
 import { Row, Col } from "antd";
-import RoomHistoryDashboardDisplay from '../components/RoomHistoryDashboardDisplay';
-import PatientHistoryDashboardDisplay from '../components/PatientHistoryDashboardDisplay';
-import APIDashboardDisplay from '../components/APIDashboardDisplay';
+import DashboardAPIDisplay from '../components/Dashboard/DashboardAPIDisplay';
+import DashboardRoomHistoryDisplay from '../components/Dashboard/DashboardRoomHistoryDisplay';
+import DashboardAPIDisplayVisits from '../components/Dashboard/DashboardAPIDisplayVisits';
+import DashboardPatientHistoryDisplay from '../components/Dashboard/DashboardPatientHistoryDisplay';
 
 export default function Home() {
   return (
@@ -12,22 +13,29 @@ export default function Home() {
         <title>Patient Locator</title>
         <link rel="icon" href="/title.ico" />
       </Head>
+      <div>
+        <button
+
+        >
+
+        </button>
+      </div>
 
       <main className={homeStyles.main}>
-        <Row gutter={[6,6]} align="middle" justify='center'>
+        <Row gutter={[6, 6]} align="middle" justify='center'>
           <Col span={8} className={homeStyles.grid}>
-            <APIDashboardDisplay />
+            <DashboardAPIDisplayVisits />
           </Col>
           <Col span={8} className={homeStyles.grid}>
-            <RoomHistoryDashboardDisplay />
+            <DashboardRoomHistoryDisplay />
           </Col>
         </Row>
-        <Row gutter={[6,6]} align="middle" justify='center'>
+        <Row gutter={[6, 6]} align="middle" justify='center'>
           <Col span={8} className={homeStyles.grid}>
-            <APIDashboardDisplay />
+            <DashboardAPIDisplay />
           </Col>
           <Col span={8} className={homeStyles.grid}>
-            <PatientHistoryDashboardDisplay />
+            <DashboardPatientHistoryDisplay />
           </Col>
         </Row>
       </main>

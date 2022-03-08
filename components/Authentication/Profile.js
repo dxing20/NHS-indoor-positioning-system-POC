@@ -1,7 +1,6 @@
+import { React, useState } from 'react';
 import { useRouter } from 'next/router';
-import React from 'react';
-import { useState } from 'react';
-import authService from '../pages/api/auth.service';
+import authService from '../../pages/api/auth.service';
 import loginStyles from '../styles/Login.module.css'
 
 const Profile = (props) => {

@@ -4,7 +4,7 @@ import { Row, Col } from "antd";
 
 const Navbar = () => {
   return (
-    <nav className={navStyles.navbar}>
+    <div className={navStyles.navbar}>
       <Row>
         <Col span={6}>
           <Titleicon
@@ -28,7 +28,7 @@ const Navbar = () => {
           </div>
         </Col>
       </Row>
-    </nav>
+    </div>
   );
 }
 
