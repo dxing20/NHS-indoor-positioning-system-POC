@@ -17,7 +17,7 @@ export default function Home() {
       <main className={homeStyles.main}>
         <Row gutter={[6, 6]} align="middle" justify='center'>
           <Col className={homeStyles.grid} xs={20} xl={8}>
-            {/* <DashboardAPIDisplayVisits /> */}
+            <DashboardAPIDisplayVisits />
           </Col>
           <Col className={homeStyles.grid} xs={20} xl={8}>
             <DashboardRoomHistoryDisplay />
@@ -25,7 +25,7 @@ export default function Home() {
         </Row>
         <Row gutter={[6, 6]} align="middle" justify='center'>
           <Col className={homeStyles.grid} xs={20} xl={8}>
-            {/* <DashboardAPIDisplay /> */}
+            <DashboardAPIDisplay />
           </Col>
           <Col className={homeStyles.grid} xs={20} xl={8}>
             <DashboardPatientHistoryDisplay />
