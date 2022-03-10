@@ -7,8 +7,11 @@ const BarGraph = ({ data }) => {
     data,
     width: 490,
     height: 162,
-    xField: 'type',
-    yField: 'sales',
+    xField: 'room',
+    yField: 'visits',
+    legend: {
+      title: "Most visited rooms",
+    },
     label: {
       // 可手动配置 label 数据标签位置
       position: 'middle',

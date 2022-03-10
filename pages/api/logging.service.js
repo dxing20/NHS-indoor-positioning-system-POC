@@ -6,7 +6,7 @@ const API_UPDATE = base.concat("/api/log/update");
 const API_LOGS = base.concat("/api/data/log/");
 
 class LocationService {
-  addLog(qrhash, roomName, level, date, apiKey) {
+  addLog(qrhash, roomName, level, date) {
     const config = {
       headers: authHeader(),
     };

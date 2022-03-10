@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Profile from "../components/Profile";
+import Profile from "../components/Authentication/Profile";
 
 const Login = () => {
   let [username, setUsername] = useState("");

@@ -13,28 +13,21 @@ export default function Home() {
         <title>Patient Locator</title>
         <link rel="icon" href="/title.ico" />
       </Head>
-      <div>
-        <button
-
-        >
-
-        </button>
-      </div>
 
       <main className={homeStyles.main}>
         <Row gutter={[6, 6]} align="middle" justify='center'>
-          <Col span={8} className={homeStyles.grid}>
-            <DashboardAPIDisplayVisits />
+          <Col className={homeStyles.grid} xs={20} xl={8}>
+            {/* <DashboardAPIDisplayVisits /> */}
           </Col>
-          <Col span={8} className={homeStyles.grid}>
+          <Col className={homeStyles.grid} xs={20} xl={8}>
             <DashboardRoomHistoryDisplay />
           </Col>
         </Row>
         <Row gutter={[6, 6]} align="middle" justify='center'>
-          <Col span={8} className={homeStyles.grid}>
-            <DashboardAPIDisplay />
+          <Col className={homeStyles.grid} xs={20} xl={8}>
+            {/* <DashboardAPIDisplay /> */}
           </Col>
-          <Col span={8} className={homeStyles.grid}>
+          <Col className={homeStyles.grid} xs={20} xl={8}>
             <DashboardPatientHistoryDisplay />
           </Col>
         </Row>

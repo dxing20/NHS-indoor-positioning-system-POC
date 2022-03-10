@@ -5,36 +5,36 @@ import BarGraph from './Graphs/BarGraph.component';
 const APIDashboardDisplayVisits = () => {
   const data = [
     {
-      type: '家具家电',
-      sales: 38,
+      room: 'GP Room',
+      visits: 10,
     },
     {
-      type: '粮油副食',
-      sales: 52,
+      room: 'Psych Ward',
+      visits: 16,
     },
     {
-      type: '生鲜水果',
-      sales: 61,
+      room: 'Ward 7',
+      visits: 50,
     },
     {
-      type: '美容洗护',
-      sales: 145,
+      room: 'Ward 7A',
+      visits: 145,
     },
     {
-      type: '母婴用品',
-      sales: 48,
+      room: 'Children\'s Care 12b',
+      visits: 48,
     },
     {
-      type: '进口食品',
-      sales: 38,
+      room: 'South Corridor 63',
+      visits: 38,
     },
     {
-      type: '食品饮料',
-      sales: 38,
+      room: 'South Corridor 64',
+      visits: 20,
     },
     {
-      type: '家庭清洁',
-      sales: 38,
+      room: 'North Corridor 65',
+      visits: 38,
     },
   ];
 

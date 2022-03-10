@@ -1,20 +1,25 @@
 .navbar {
-    /* list-style-type: none; */
     background-color: #0c2974;
-    padding: 10px 0 10px 0;
-    /* display: table; */
-    /* margin: 0 auto; */
-    /* transform: translateY(-50%); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.navTitle {
+    display: inline;
+    float: left;
+}
+
+.navitems {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navitem {
-    display: inline;
     color: white;
-    text-align: center;
-    padding-left: 160px;
-    /* right: 50px; */
-    justify-content: center;
-    text-decoration: none;
+    /* margin-left: 5rem; */
 }
 
 .navitem a {
@@ -82,7 +87,7 @@
 
 .indicator {
     position: relative;
-    left: 25%;
+    left: 5%;
     top: 10px;
     width: 30px;
     height: 3px;
@@ -105,12 +110,12 @@
 }
 
 .navitem a:nth-child(2):hover ~ .indicator {
-    left: 44%;
+    left: 26%;
     background: linear-gradient(130deg, #00e2ff, #89ff00);
 }
 
 .navitem a:nth-child(3):hover ~ .indicator {
-    left: 64%;
+    left: 55%;
     background: linear-gradient(130deg, purple, palevioletred);
 }
   
@@ -129,13 +134,45 @@
     color: white;
 }
 
+.logocontainer {
+    width: 30px;
+}
+
 .settingslogo {
-    height: 2.2em;
-    padding: 3px;
-    display: flex;
-    margin-right: 4px;
-    margin-top: 8px;
-    justify-content: right;
-    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
     color: white;
+}
+
+.hamburgerWrapper {
+    display: none;
+}
+
+@media (max-width: 925px) {
+    .hamburgerWrapper {
+        background-color: #fff;
+        display: flex;
+        padding-top: 10px;
+        margin-left: 10px;
+        z-index: 10;
+    }
+}
+
+.hamburger {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    z-index: 10;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #0c2974;
 }
