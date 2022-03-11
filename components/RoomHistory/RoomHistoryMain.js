@@ -1,25 +1,63 @@
-import { Table, Input, Button, Space } from 'antd';
-import Highlighter from 'react-highlight-words';
-import { SearchOutlined } from '@ant-design/icons';
-import { React, useState, useEffect } from 'react';
-import loggingService from '../pages/api/logging.service';
+import Dropdownbar from "./Dropdownbar.component";
+import RoomHistoryTable from "./RoomHistoryTable";
+import { useEffect, useState } from "react";
+import { DownOutlined, SearchOutlined } from "@ant-design/icons";
+import { Button, Dropdown, Menu, message, Table, Input, Space } from "antd";
+import loggingService from "../../pages/api/logging.service";
 
-const DataTable = ({ columns, inputLogs }) => {
-
+const RoomHistoryMain = ({ columns }) => {
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
+  const [locations, setLocations] = useState([]);
   const [logs, setLogs] = useState([]);
+  const [chosenLocation, setChosenLocation] = useState('');
 
   useEffect(() => {
     loggingService
+      .getLocations()
+      .then((d) => {
+        setLocations(d.data.locations);
+      })
+      .catch((error) => {
+        alert(JSON.stringify(error.response.data, null, 2));
+      });
+
+    loggingService
       .getLogs()
+      .then((d) => {
+        setLogs(d.data.logs);
+        // console.log(logs)
+      })
+      .catch((error) => {
+        alert(JSON.stringify(error.response.data, null, 2));
+      });
+  }, []);
+
+  const generateLocationsOnMenu = (location) => {
+    return (
+      <Menu.Item key={location.roomName + '/' + location.level}>
+        {location.roomName + " (Level: " + location.level + ")"}
+      </Menu.Item>
+    )
+  }
+
+  const handleMenuClick = (e) => {
+    setChosenLocation(e.key);
+    loggingService
+      .getPatientsInLocation(e.key)
       .then((d) => {
         setLogs(d.data.logs);
       })
       .catch((error) => {
         alert(JSON.stringify(error.response.data, null, 2));
       });
-  });
+  }
+
+  const menu = (
+    <Menu onClick={handleMenuClick}>
+      {locations.map(generateLocationsOnMenu)}
+    </Menu>
+  );
 
   const getColumnSearchProps = dataIndex => ({
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
@@ -81,13 +119,30 @@ const DataTable = ({ columns, inputLogs }) => {
   for (let i = 0; i < columns.length; i++) {
     columns[i] = { ...columns[i], ...getColumnSearchProps(columns[i].dataIndex) }
   }
-  // { console.log("inputfinal:" + inputLogs.length) }
 
   return (
     <div>
-      <Table columns={columns} dataSource={logs} />
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          paddingTop: "40px",
+        }}
+      >
+        <Dropdown overlay={menu}>
+          <Button>
+            {chosenLocation ? chosenLocation : "Select Room"} <DownOutlined />
+          </Button>
+        </Dropdown>
+      </div>
+
+      <div style={{ padding: '60px' }}>
+        <Table columns={columns} dataSource={logs} />
+      </div>
+
     </div>
-  )
+  );
 }
 
-export default DataTable;
+export default RoomHistoryMain;

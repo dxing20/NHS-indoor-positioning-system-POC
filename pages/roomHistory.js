@@ -1,9 +1,12 @@
+import RoomHistoryMain from "../components/RoomHistory/RoomHistoryMain";
+import RoomHistoryTable from "../components/RoomHistory/RoomHistoryTable";
+
 const roomHistory = () => {
-  return ( 
+  return (
     <div>
-      INSERT ROOM HISTORY
+      <RoomHistoryTable />
     </div>
   );
 }
-   
+
 export default roomHistory;
