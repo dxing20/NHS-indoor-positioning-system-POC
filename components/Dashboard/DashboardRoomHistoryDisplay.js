@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import loggingService from "../../pages/api/logging.service";
-import navStyles from '../../styles/Nav.module.css'
-import mainStyles from "../../styles/Home.module.css"
-import Titleicon from "../Titleicon";
-import CardFooter from './DashboardCardFooter';
+import DashboardWrapper from "./DashboardWrapper";
+
 
 const RoomHistoryDashboardDisplay = () => {
   const [logs, setLogs] = useState([]);
@@ -13,7 +11,7 @@ const RoomHistoryDashboardDisplay = () => {
       .getLimitedLogs(3)
       .then((d) => {
         setLogs(d.data.logs);
-        console.log(logs)
+        // console.log(logs)
       })
       .catch((error) => {
         alert(JSON.stringify(error.response.data, null, 2));
@@ -30,25 +28,14 @@ const RoomHistoryDashboardDisplay = () => {
   }
 
   return (
-    <div>
-      <Titleicon
-        iconLink={<a href='/roomHistory'><img src="/history.ico" alt="history-icon" className={navStyles.Titleicon} /></a>}
-        titleLink={
-          <h2>
-            <a href='/roomHistory' style={{ color: '#000', fontSize: 20 }}>Room History</a>
-          </h2>
-        }
-      />
-
-      <div className={mainStyles.cardDesc}>
-        {logs.map(generateLocationsLog)}
-      </div>
-
-      <div className={mainStyles.cardFooter}>
-        <CardFooter tabName="View all Room History" link="/roomHistory" />
-      </div>
-
-    </div>
+    <DashboardWrapper
+      title="Room History"
+      iconLink='/roomHistory'
+      iconImg="/history.ico"
+      iconAlt="history-icon"
+      graph={logs.map(generateLocationsLog)}
+      cardfooterdesc="View all Room History"
+    />
   );
 }
 

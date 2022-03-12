@@ -39,11 +39,14 @@ const APIDashboardDisplayVisits = () => {
   ];
 
   return (
-    <div>
-      <DashboardWrapper
-        graph={<BarGraph data={data} />}
-      />
-    </div>
+    <DashboardWrapper
+      title="APIs"
+      iconLink='/apis'
+      iconImg="/API.ico"
+      iconAlt='api-icon'
+      graph={<BarGraph data={data} />}
+      cardfooterdesc="View all APIs"
+    />
   );
 }
 

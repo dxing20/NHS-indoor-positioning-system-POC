@@ -16,19 +16,27 @@ export default function Home() {
 
       <main className={homeStyles.main}>
         <Row gutter={[6, 6]} align="middle" justify='center'>
-          <Col className={homeStyles.grid} xs={20} xl={8}>
-            <DashboardAPIDisplayVisits />
+          <Col className={homeStyles.grid} xs={20} xl={10}>
+            <div className={homeStyles.gridbox}>
+              <DashboardAPIDisplayVisits />
+            </div>
           </Col>
-          <Col className={homeStyles.grid} xs={20} xl={8}>
-            <DashboardRoomHistoryDisplay />
+          <Col className={homeStyles.grid} xs={20} xl={10}>
+            <div className={homeStyles.gridbox}>
+              <DashboardRoomHistoryDisplay />
+            </div>
           </Col>
         </Row>
         <Row gutter={[6, 6]} align="middle" justify='center'>
-          <Col className={homeStyles.grid} xs={20} xl={8}>
-            <DashboardAPIDisplay />
+          <Col className={homeStyles.grid} xs={20} xl={10}>
+            <div className={homeStyles.gridbox}>
+              <DashboardAPIDisplay />
+            </div>
           </Col>
-          <Col className={homeStyles.grid} xs={20} xl={8}>
-            <DashboardPatientHistoryDisplay />
+          <Col className={homeStyles.grid} xs={20} xl={10}>
+            <div className={homeStyles.gridbox}>
+              <DashboardPatientHistoryDisplay />
+            </div>
           </Col>
         </Row>
       </main>

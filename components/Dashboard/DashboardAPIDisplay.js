@@ -19,11 +19,14 @@ const APIDashboardDisplay = () => {
   };
 
   return (
-    <div>
-      <DashboardWrapper
-        graph={<LineGraph data={data} />}
-      />
-    </div>
+    <DashboardWrapper
+      title="APIs"
+      iconLink='/apis'
+      iconImg="/API.ico"
+      iconAlt='api-icon'
+      graph={<LineGraph data={data} />}
+      cardfooterdesc="View all APIs"
+    />
   );
 }
 

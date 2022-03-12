@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import authService from '../../pages/api/auth.service';
 import loginStyles from '../../styles/Login.module.css'
@@ -13,6 +13,17 @@ const Profile = (props) => {
 
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const user = authService.getCurrentUser();
+
+  useEffect(() => {
+    console.log(user);
+    // redirect to home if already logged in
+    if (user !== null && user.data.message === "Login Verified") {
+      router.push('/');
+    }
+
+    // eslint - disable - next - line react - hooks / exhaustive - deps
+  }, []);
 
   const handleInputs = (get, set) => {
     return (e) => {

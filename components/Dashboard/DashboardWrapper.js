@@ -3,18 +3,19 @@ import CardFooter from "./DashboardCardFooter";
 import navStyles from '../../styles/Nav.module.css'
 import mainStyles from "../../styles/Home.module.css"
 
-const DashboardWrapper = ({ graph }) => {
+const DashboardWrapper = ({ title, iconLink, iconImg, iconAlt, graph, cardfooterdesc }) => {
   return (
-    <div>
+    <div className={mainStyles.DashboardWrapperContainer}>
       <Titleicon
-        iconLink={<a href='/apis'><img src="/API.ico" alt="API-icon" className={navStyles.Titleicon} /></a>}
-        titleLink={<a href='/apis' style={{ color: '#000', fontSize: 20 }}>APIs</a>}
+        iconLink={<a href={iconLink}><img src={iconImg} alt={iconAlt} className={navStyles.Titleicon} /></a>}
+        titleLink={<a href={iconLink} style={{ color: '#000', fontSize: 20 }}>{title}</a>}
       />
-
-      <div className={mainStyles.APIcontainer}>
+      <div className={mainStyles.cardContainer}>
         {graph}
       </div>
-      <CardFooter tabName="View all APIs" link="/apis" />
+      <div className={mainStyles.cardFooter}>
+        <CardFooter tabName={cardfooterdesc} link={iconLink} />
+      </div>
     </div>
   );
 }

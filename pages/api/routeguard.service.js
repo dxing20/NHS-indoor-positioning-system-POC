@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-// import { userService } from "services";
+import authService from '../../pages/api/auth.service';
 
 const RouteGuard = ({ children }) => {
   const router = useRouter();
   const [authorized, setAuthorized] = useState(false);
-  const user = typeof window !== 'undefined' ? localStorage.getItem('user') : null
+  // const user = authService.getCurrentUser();
+  const user = typeof window !== 'undefined' ? authService.getCurrentUser() : null
+
 
   useEffect(() => {
     // on initial load - run auth check 
@@ -28,6 +30,7 @@ const RouteGuard = ({ children }) => {
   }, []);
 
   const authCheck = (url) => {
+    // console.log(user.data.message);
     // redirect to login page if accessing a private page and not logged in 
     const publicPaths = ['/login'];
     const path = url.split('?')[0];

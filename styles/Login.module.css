@@ -1,11 +1,11 @@
 .body {
   display: flex;
-  vertical-align: middle;
 }
 
 .loginBox {
+  display: flex;
   width: 340px;
-  margin: 50px auto;
+  margin: 10% auto;
   font-size: 15px;
 }
 
