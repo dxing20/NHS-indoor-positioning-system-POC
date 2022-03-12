@@ -1,4 +1,5 @@
 import axios from "axios";
+import Router from "next/router";
 
 const base = "https://api-dot-nhsproject-342615.nw.r.appspot.com";
 const JWT_URL = base.concat("/api/auth/login");
@@ -18,6 +19,7 @@ class AuthService {
 
   logout() {
     localStorage.removeItem("user");
+    Router.push('/login');
   }
 
   getCurrentUser() {

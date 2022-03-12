@@ -2,6 +2,7 @@ import { useState } from "react";
 import Titleicon from "../Titleicon";
 import navStyles from "../../styles/Nav.module.css"
 import Hamburger from './Hamburger.component';
+import authService from "../../pages/api/auth.service";
 
 const Navbar = () => {
 
@@ -9,6 +10,10 @@ const Navbar = () => {
 
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen);
+  }
+
+  const handleLogout = () => {
+    authService.logout();
   }
 
   return (
@@ -25,7 +30,7 @@ const Navbar = () => {
           <a href="/">Dashboard</a>
           <a href="roomHistory">Room History</a>
           <a href="patientHistory">Patient History</a>
-          <a href="logout">Log Out</a>
+          <a onClick={handleLogout}>Log Out</a>
           <div className={navStyles.indicator}></div>
         </div>
       </div>
