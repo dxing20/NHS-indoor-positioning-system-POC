@@ -11,15 +11,24 @@ const DataTable = ({ columns, inputLogs }) => {
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {
-    loggingService
-      .getLogs()
-      .then((d) => {
-        setLogs(d.data.logs);
-      })
-      .catch((error) => {
-        alert(JSON.stringify(error.response.data, null, 2));
-      });
-  });
+    const loadData = () => {
+      loggingService
+        .getLogs()
+        .then((d) => {
+          setLogs(d.data.logs);
+          console.log(logs);
+        })
+        .catch((error) => {
+          alert(JSON.stringify(error.response.data, null, 2));
+        });
+    }
+    loadData();
+    const interval = setInterval(() => {
+      loadData();
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const getColumnSearchProps = dataIndex => ({
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (

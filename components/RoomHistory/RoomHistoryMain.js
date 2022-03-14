@@ -20,15 +20,23 @@ const RoomHistoryMain = ({ columns }) => {
         alert(JSON.stringify(error.response.data, null, 2));
       });
 
-    loggingService
-      .getLogs()
-      .then((d) => {
-        setLogs(d.data.logs);
-        // console.log(logs)
-      })
-      .catch((error) => {
-        alert(JSON.stringify(error.response.data, null, 2));
-      });
+    const loadData = () => {
+      loggingService
+        .getLogs()
+        .then((d) => {
+          setLogs(d.data.logs);
+          console.log(logs);
+        })
+        .catch((error) => {
+          alert(JSON.stringify(error.response.data, null, 2));
+        });
+    }
+    loadData();
+    const interval = setInterval(() => {
+      loadData();
+    }, 30000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const generateLocationsOnMenu = (location) => {
