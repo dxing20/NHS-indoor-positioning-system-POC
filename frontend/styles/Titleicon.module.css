@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: left; /* align horizontal */
+    align-items: center; 
+    height: 20px;
+    margin-top: 15px;
+}
+
+
+.logo {
+    height: 3em;
+    display: inline;
+    align-items: center;
+}
+
+.navtitle {
+    display: inline;
+    align-items: center;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
