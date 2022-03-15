@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import Titleicon from "../Titleicon";
 import navStyles from "../../styles/Nav.module.css"
 import authService from "../../pages/api/auth.service";
@@ -15,16 +17,16 @@ const Navbar = () => {
       <nav className={navStyles.navbar}>
         <div className={navStyles.navTitle}>
           <Titleicon
-            iconLink={<a href='/'><img src="/title.ico" alt="Navbar-icon" className={navStyles.Titleicon} /></a>}
-            titleLink={<a href='/' style={{ color: '#fff', fontSize: 20 }}>Patient Locator</a>}
+            iconLink={<Link href='/' passHref><Image src="/title.ico" alt="Navbar-icon" width="40" height="40" className={navStyles.Titleicon} /></Link>}
+            titleLink={<Link href='/' ><a style={{ color: '#fff', fontSize: 20 }}>Patient Locator</a></Link>}
           />
         </div>
 
         <div className={navStyles.navitems}>
           <div className={navStyles.navitem}>
-            <a href="/">Dashboard</a>
-            <a href="roomHistory">Room History</a>
-            <a href="patientHistory">Patient History</a>
+            <Link href="/" passHref>Dashboard</Link>
+            <Link href="roomHistory" passHref>Room History</Link>
+            <Link href="patientHistory" passHref>Patient History</Link>
             <a onClick={handleLogout}>Log Out</a>
             <div className={navStyles.indicator}></div>
           </div>

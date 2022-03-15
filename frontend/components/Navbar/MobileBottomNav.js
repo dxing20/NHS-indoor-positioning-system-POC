@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HomeOutlined, UserOutlined, HistoryOutlined } from "@ant-design/icons";
 import mobileNavStyles from './MobileNav.module.css';
 
@@ -5,15 +6,15 @@ const MobileBottomNav = () => {
   return (
     <body>
       <nav className={mobileNavStyles.mobileNav}>
-        <a href="/" className={mobileNavStyles.icon}>
+        <Link href="/" passHref className={mobileNavStyles.icon}>
           <HomeOutlined style={{ fontSize: '30px', color: '#fff' }} />
-        </a>
-        <a href="/roomHistory" className={mobileNavStyles.icon}>
+        </Link>
+        <Link href="/roomHistory" passHref className={mobileNavStyles.icon}>
           <UserOutlined style={{ fontSize: '30px', color: '#fff' }} />
-        </a>
-        <a href="/patientHistory" className={mobileNavStyles.icon}>
+        </Link>
+        <Link href="/patientHistory" passHref className={mobileNavStyles.icon}>
           <HistoryOutlined style={{ fontSize: '30px', color: '#fff' }} />
-        </a>
+        </Link>
       </nav>
     </body>
   );

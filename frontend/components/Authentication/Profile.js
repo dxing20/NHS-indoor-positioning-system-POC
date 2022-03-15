@@ -16,14 +16,13 @@ const Profile = (props) => {
   const user = authService.getCurrentUser();
 
   useEffect(() => {
-    console.log(user);
     // redirect to home if already logged in
     if (user !== null && user.data.message === "Login Verified") {
       router.push('/');
     }
 
     // eslint - disable - next - line react - hooks / exhaustive - deps
-  }, []);
+  }, [user, router]);
 
   const handleInputs = (get, set) => {
     return (e) => {

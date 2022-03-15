@@ -28,7 +28,7 @@ const DataTable = ({ columns, inputLogs }) => {
     }, 30000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [logs]);
 
   const getColumnSearchProps = dataIndex => ({
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (

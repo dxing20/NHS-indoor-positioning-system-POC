@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { DownOutlined, SearchOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Menu, message, Table, Input, Space } from "antd";
+import Highlighter from 'react-highlight-words';
 import loggingService from "../../pages/api/logging.service";
 
 const RoomHistoryMain = ({ columns }) => {
@@ -25,7 +26,6 @@ const RoomHistoryMain = ({ columns }) => {
         .getLogs()
         .then((d) => {
           setLogs(d.data.logs);
-          console.log(logs);
         })
         .catch((error) => {
           alert(JSON.stringify(error.response.data, null, 2));
@@ -37,7 +37,7 @@ const RoomHistoryMain = ({ columns }) => {
     }, 30000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [logs]);
 
   const generateLocationsOnMenu = (location) => {
     return (

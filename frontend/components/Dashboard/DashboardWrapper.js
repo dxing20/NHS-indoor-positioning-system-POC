@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Titleicon from "../Titleicon";
 import CardFooter from "./DashboardCardFooter";
 import navStyles from '../../styles/Nav.module.css'
@@ -7,7 +8,7 @@ const DashboardWrapper = ({ title, iconLink, iconImg, iconAlt, graph, cardfooter
   return (
     <div className={mainStyles.DashboardWrapperContainer}>
       <Titleicon
-        iconLink={<a href={iconLink}><img src={iconImg} alt={iconAlt} className={navStyles.Titleicon} /></a>}
+        iconLink={<a href={iconLink}><Image src={iconImg} alt={iconAlt} width="35" height="35" className={navStyles.Titleicon} /></a>}
         titleLink={<a href={iconLink} style={{ color: '#000', fontSize: 20 }}>{title}</a>}
       />
       <div className={mainStyles.cardContainer}>
