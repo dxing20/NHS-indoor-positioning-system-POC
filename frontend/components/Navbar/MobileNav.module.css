@@ -1,0 +1,22 @@
+.mobileNav {
+  background: #0c2974;
+  position: fixed;
+  bottom: 0;
+  height: 65px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 9999;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 576px) {
+  .mobileNav {
+    display: none;
+  }
+}
