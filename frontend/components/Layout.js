@@ -1,12 +1,13 @@
 import Navbar from "./Navbar/Navbar";
+import dxCSS from "../styles/dx.module.css";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className={dxCSS.page}>
       <Navbar />
       {children}
     </div>
   );
-}
+};
 
 export default Layout;

@@ -1,5 +1,4 @@
 .container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +11,8 @@
   margin-top: 3rem;
   width: 850px;
   height: 300px;
-  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+    0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
   background-color: #fff;
   border-radius: 2px;
 }
@@ -23,23 +23,22 @@
   }
 
   .grid {
-    display: flex;  
+    display: flex;
     margin-top: 3rem;
     margin-left: 15px;
     width: 850px;
     height: 300px;
-    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+      0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
     background-color: #fff;
     border-radius: 2px;
   }
 }
 
-
-
 .grid hr {
   margin: 45px -280px 10px;
   margin-left: 9px;
-  border: 0;  
+  border: 0;
   border-top: 1px solid #000;
 }
 
@@ -56,7 +55,7 @@
 }
 
 .main {
-  flex: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,7 +74,7 @@
 
 .cardFooter {
   display: flex;
-  border-top: 1px solid rgba(0,0,0,.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
   width: 506px;
   margin-top: 45px;
 }
@@ -86,7 +85,6 @@
   padding-right: 5px;
   height: 162px;
 }
-
 
 .a {
   color: inherit;
@@ -125,10 +123,9 @@
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
 }
-
 
 .card {
   margin: 1rem;

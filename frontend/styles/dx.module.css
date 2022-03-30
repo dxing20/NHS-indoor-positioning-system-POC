@@ -1,0 +1,9 @@
+.page {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.page div:nth-child(2) {
+  height: 100%;
+}

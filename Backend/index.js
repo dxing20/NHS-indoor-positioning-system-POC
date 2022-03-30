@@ -81,3 +81,5 @@ app.use((err, req, res, next) => {
 app.listen(serverConfig.port, () => {
   console.log(`Listening on port ${serverConfig.port}`);
 });
+
+// module.exports = app;

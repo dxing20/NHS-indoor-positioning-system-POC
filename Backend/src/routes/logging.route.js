@@ -13,12 +13,15 @@ router.post("/update/", async (req, res) => {
     level: req.body.level,
   });
   const date = Date.parse(req.body.date);
+  /* istanbul ignore next */
   if (date > Date.now()) {
     return res.status("401").json({ error: "Time in the future" });
   }
+  /* istanbul ignore next */
   if (!patient) {
     return res.status("401").json({ error: "Cannot find patient" });
   }
+  /* istanbul ignore next */
   if (!location) {
     return res.status("401").json({ error: "Cannot find location" });
   }
